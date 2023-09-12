@@ -58,7 +58,6 @@ def h3(s):
             Bcol=abs((i+2)%3)  # board col
             Grow=abs((board[i-1]-1)//3) # goal row
             Gcol=abs((board[i-1]+2)%3)  # goal col
-
             if Brow != Grow:
                 res+=1
             if Bcol != Gcol:
