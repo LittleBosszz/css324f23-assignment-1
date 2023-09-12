@@ -1,14 +1,14 @@
 def initial_state():
-    return (0, 0, 0)
+    return (8 0, 0)
 
+# a and b = 4
 def is_goal(s):
     return s[0]==4 and s[1]==4 
 
 def successors(s):
     a, b, c = s
-    # pour from one to another
 
-    # pour to a
+    # pour to a (8)
     t = 8 - a
     if b>0 and t>0:
       if b>t:
@@ -21,7 +21,7 @@ def successors(s):
       else :
         yield ((a+c, b, 0), c)
     
-    # pour to b
+    # pour to b (5)
     t = 5 - b
     if a>0 and t>0:
       if a>t:
@@ -34,7 +34,7 @@ def successors(s):
       else:
         yield ((a, b+c, 0), c)
 
-     # pour to c
+     # pour to c (3)
     t = 3 - c
     if a>0 and t>0:
      if a>t:
