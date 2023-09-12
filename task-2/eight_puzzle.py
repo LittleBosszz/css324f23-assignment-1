@@ -50,5 +50,18 @@ def h1(s):
 
 def h3(s):
     # implement this function
-    board, _, _ = s
-    return 0
+    
+    res=0
+    board,_,_ = s
+    for i in range (1,10):
+        if board[i-1]!=0:
+            brow=abs((i-1)//3) # board row
+            bcol=abs((i+2)%3)  # board col
+            grow=abs((board[i-1]-1)//3) # goal row
+            gcol=abs((board[i-1]+2)%3)  # goal col
+
+            if brow != grow:
+                res+=1
+            if bcol != gcol:
+                res+=1
+    return res
