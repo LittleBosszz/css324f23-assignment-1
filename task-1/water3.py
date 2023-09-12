@@ -5,45 +5,45 @@ def is_goal(s):
     return s[0]==4 and s[1]==4 
 
 def successors(s):
-    x, y, z = s
+    a, b, c = s
     # pour from one to another
 
-    # pour to x
-    t = 8 - x
-    if y>0 and t>0:
-      if y>t:
-        yield ((8, y-t, z), t)
+    # pour to a
+    t = 8 - a
+    if b>0 and t>0:
+      if b>t:
+        yield ((8, b-t, c), t)
       else :
-        yield ((x+y, 0, z), y)
-    if z > 0 and t>0:
-      if z>t:
-        yield ((8, y, z-t), t)
+        yield ((a+b, 0, c), b)
+    if c > 0 and t>0:
+      if c>t:
+        yield ((8, b, c-t), t)
       else :
-        yield ((x+z, y, 0), z)
+        yield ((a+c, b, 0), c)
     
-    # pour to y
-    t = 5 - y
-    if x>0 and t>0:
-      if x>t:
-        yield ((x-t, 5, z), t)
+    # pour to b
+    t = 5 - b
+    if a>0 and t>0:
+      if a>t:
+        yield ((a-t, 5, z), t)
       else:
-        yield ((0, y+x, z), x)
-    if z>0 and t>0:
-      if z>t:
-        yield ((x, 5, z-t), t)
+        yield ((0, b+a, c), a)
+    if c>0 and t>0:
+      if c>t:
+        yield ((a, 5, c-t), t)
       else:
-        yield ((x, y+z, 0), z)
+        yield ((a, b+c, 0), c)
 
-     # pour to z
-    t = 3 - z
-    if x>0 and t>0:
-     if x>t:
-      yield ((x-t, y, 3), t)
+     # pour to c
+    t = 3 - c
+    if a>0 and t>0:
+     if a>t:
+      yield ((a-t, b, 3), t)
      else:
-      yield ((0, y, z+x), x)
-    if y>0 and t>0:
-     if y>t:
-      yield ((x, y-t, 3), t)
+      yield ((0, b, c+a), a)
+    if b>0 and t>0:
+     if b>t:
+      yield ((a, b-t, 3), t)
      else:
-      yield ((x, 0, z+y), y)
+      yield ((a, 0, c+b), b)
 return []
